@@ -1,0 +1,99 @@
+body{
+    background-image: linear-gradient(to right, rgb(128, 155, 209), rgb(229, 170, 231));
+    color: rgb(17, 17, 17);
+    font-family: "Lato", sans-serif;
+}
+
+h1{
+    color: rgb(0, 0, 0);
+}
+
+h2{
+    color: rgb(15, 15, 15);
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 300px; 
+    height: auto; 
+}
+
+iframe {
+    width: 700px; /* especifica el ancho deseado */
+    height: 500; /* la altura se ajustará automáticamente para mantener la proporción */
+}
+
+.columnas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los iframes */
+}
+
+.spotify-iframe {
+    width: calc(50% - 10px); /* Establece el ancho de las columnas y el espacio entre ellas */
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .spotify-iframe {
+        width: 100%; /* En pantallas pequeñas, los iframes ocuparán el ancho completo */
+    }
+}
+
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(238, 232, 232, 0) 0%, rgba(235, 235, 235, 0.7) 100%);
+    z-index: -1;
+    pointer-events: none; /* Para que las estrellas no interfieran con los clics en el contenido */
+}
+
+.stars:before {
+    content: "";
+    position: absolute;
+    top: -2000px; /* Mueve las estrellas arriba de la pantalla */
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: #6d2929;
+    box-shadow: 400px 400px #c93333,
+                300px 300px #493eb1,
+                400px 400px #d33b87,
+                500px 500px #258542,
+                600px 600px #9fb43e,
+                700px 700px #a35c0a,
+                800px 800px #991192,
+                900px 900px #500349,
+                1000px 1000px #3f096b,
+                1100px 1100px #ffffff,
+                1200px 1200px #085c94,
+                1300px 1300px #9955c7,
+                1400px 1400px #8a2658,
+                1500px 1500px #d35028,
+                1600px 1600px #0790a8,
+                1700px 1700px #043b7a,
+                1800px 1800px #1a036d,
+                1900px 1900px #9c3535,
+                2000px 2000px #ffffff;
+    animation: stars 4s linear infinite; /* Ajusta la velocidad de las estrellas moviéndose */
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(-2000px); /* Mueve las estrellas de arriba a abajo */
+    }
+    to {
+        transform: translateY(2000px);
+    }
+}
